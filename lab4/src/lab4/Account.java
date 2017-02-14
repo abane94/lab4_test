@@ -38,6 +38,10 @@ public class Account {
 		return balance;
 	}
 	
+	public int getPin(){
+		return pin;
+	}
+	
 	public int getAccountNumber(){
 		return accountNumber;
 	}
