@@ -50,8 +50,11 @@ public class ATM{
 			   
 			System.out.println("Your new account balance is: $" + tmpAccount.getBalance());
 			   
+			System.out.println("Thank you for your buisness, and have a nice day!");
+			   
 		    } else {
-			System.out.println("Your Account number or PIN number was invalid."    
+			System.out.println("Your Account number or PIN number was invalid. Please Start Again."
+			
 		    }
 	    }
 	} while (!entry.equalsIgnoreCase("EXIT"));
