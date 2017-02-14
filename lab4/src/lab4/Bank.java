@@ -20,17 +20,43 @@ public class Bank {
 			line = reader.readLine()
 			while(line != null){
 				String[] accountData = line.split(" ");
-        int num = Interger.parseInt(accountData[0]);
-        int pin = Interger.parseInt(accountData[1]);
-        double balance = Interger.parseInt(accountData[2]);
+        			int num = Interger.parseInt(accountData[0]);
+        			int pin = Interger.parseInt(accountData[1]);
+        			double balance = Interger.parseInt(accountData[2]);
 				Account curr = new Account(num, pin, balance);
 				map.put(num, curr);
         
-        line = reader.readLine();
+        			line = reader.readLine();
 			}
 		}
 		catch(Exception e){
 			
 		}
 	}
+	
+	public Account validate(Account temp){
+		int queryNum = temp.getAccountNumber();
+		Account result;
+		if (map.contains(queryNum)
+		    result = map.get(queryNum);
+		else
+		    return null;
+		
+		if(temp.getPin() != result.getPin()){
+			return null;
+		if (result.validate())
+		    return result;
+		else
+		    return null;
+	}
+		    
+	
+	public boolean update(Account temp){
+		if (map.contains(temp.getAccountNumber())){
+			map.push(temp.getAccountNumber(), temp);
+			return true;
+		}
+	
+	}
+		    
 }
