@@ -45,4 +45,8 @@ public class Account {
 	public int getAccountNumber(){
 		return accountNumber;
 	}
+	
+	public String toString(){
+		return "" + accountNumber + " " + pin + " " + balance;
+	}
 }
