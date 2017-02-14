@@ -1,4 +1,3 @@
-import java.math.BigDecimal;
 
 public class Account {
 	
@@ -37,5 +36,9 @@ public class Account {
 	
 	public double getBalance(){
 		return balance;
+	}
+	
+	public int getAccountNumber(){
+		return accountNumber;
 	}
 }
