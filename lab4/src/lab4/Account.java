@@ -23,18 +23,19 @@ public class Account {
 		return false;
 	}
 	
-	public double withdrawl(double amount){
+	public boolean withdrawl(double amount){
 		if(balance >= amount){
 			balance = balance - amount;
-			return balance;
+			return true;
 		}
-		else{
-			return balance;
-		}
+		return false;
 	}
 	
-	public double deposit(double amount){
+	public void deposit(double amount){
 		balance = balance + amount;
+	}
+	
+	public double getBalance(){
 		return balance;
 	}
 }
