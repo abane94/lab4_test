@@ -37,15 +37,23 @@ public class ATM{
 		    
 		    	System.out.print("Please select Withdraw (W) or Deposit (D): ");
 		    	entry = input.nextLine();
-		    
-		    
-				
-		    	System.out.print("Please enter value of transaction: $");
-		    	value = input.nextLine();
+		    	if(entry.equalsIgnoreCase("W"){	
+		    		System.out.print("Please enter value of withdrawl: $");
+		    		value = input.nextLine();
+				tmpAccount.withdrawl(Double.parseDouble(value));
+			}
+			if(entry.equalsIgnoreCase("D"){	
+		    		System.out.print("Please enter value of Deposit: $");
+		    		value = input.nextLine();
+				tmpAccount.deposit(Double.parseDouble(value));
+			}
+			   
+			System.out.println("Your new account balance is: $" + tmpAccount.getBalance());
+			   
 		    } else {
 			System.out.println("Your Account number or PIN number was invalid."    
 		    }
 	    }
-	} while (!entry.equals("EXIT"));
+	} while (!entry.equalsIgnoreCase("EXIT"));
   }
 }
