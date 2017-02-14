@@ -4,7 +4,7 @@ public class Account {
 	
 	private int accountNumber;
 	private int pin;
-	private long balance;
+	private double balance;
 	
 	public boolean validate(){
 		
