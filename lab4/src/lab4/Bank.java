@@ -8,11 +8,12 @@ import java.util.TreeMap;
 
 public class Bank {
 	TreeMap<Integer, Account> map = new TreeMap<Integer, Account>();
+	String path;
+	String header;
 	public Bank(String dataPath){
 		File data = new File(dataPath);
 		FileReader r = new FileReader(data);
 		BufferedReader reader;
-		String header;
 		String line;
 		try{
 			reader = new BufferedReader(r);
@@ -56,7 +57,32 @@ public class Bank {
 			map.push(temp.getAccountNumber(), temp);
 			return true;
 		}
-	
+		return false;
+	}
+		    
+	public void close(){
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+
+		try {
+			fw = new FileWriter(path);
+			bw = new BufferedWriter(fw);
+			
+			bw.erite(header);
+			int[] keys = map.keys();
+			Account curr;
+			for( int i = 0; i < keys.length; i++){
+				curr = map.get(keys[i]);
+				bw.write(
+			}
+
+			System.out.println("Done");
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
 	}
 		    
 }
