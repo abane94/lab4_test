@@ -6,7 +6,21 @@ public class Account {
 	private int pin;
 	private double balance;
 	
-	public boolean validate(){
+	public Account(int a; int p; double b;){
+		accountNumber = a;
+		pin = p;
+		balance = b;
+	}
+	
+	public  validate(int pin){
+		
+	}
+	
+	public void withdrawl(double amount){
+		
+	}
+	
+	public void deposit(double amount){
 		
 	}
 }
