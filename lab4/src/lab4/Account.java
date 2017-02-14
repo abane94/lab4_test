@@ -6,21 +6,35 @@ public class Account {
 	private int pin;
 	private double balance;
 	
-	public Account(int a; int p; double b;){
+	public Account(int a; int p;){
+		accountNumber = a;
+		pin = p;
+		balance = 0;
+	}
+	
+	public Account(int a; int p; int b){
 		accountNumber = a;
 		pin = p;
 		balance = b;
 	}
 	
-	public  validate(int pin){
-		
+	public boolean validate(int p){
+		if(p == pin) return true;
+		return false;
 	}
 	
-	public void withdrawl(double amount){
-		
+	public double withdrawl(double amount){
+		if(balance >= amount){
+			balance = balance - amount;
+			return balance;
+		}
+		else{
+			return balance;
+		}
 	}
 	
-	public void deposit(double amount){
-		
+	public double deposit(double amount){
+		balance = balance + amount;
+		return balance;
 	}
 }
