@@ -41,11 +41,13 @@ public class ATM{
 		    		System.out.print("Please enter value of withdrawl: $");
 		    		value = input.nextLine();
 				tmpAccount.withdrawl(Double.parseDouble(value));
+				bank.update(tmpAccount);
 			}
 			if(entry.equalsIgnoreCase("D"){	
 		    		System.out.print("Please enter value of Deposit: $");
 		    		value = input.nextLine();
 				tmpAccount.deposit(Double.parseDouble(value));
+				bank.update(tmpAccount);
 			}
 			   
 			System.out.println("Your new account balance is: $" + tmpAccount.getBalance());
