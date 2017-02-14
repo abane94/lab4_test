@@ -27,6 +27,7 @@ public class Account {
 			balance = balance - amount;
 			return true;
 		}
+		System.out.println("This transcraction could not be completed");
 		return false;
 	}
 	
