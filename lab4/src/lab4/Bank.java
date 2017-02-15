@@ -1,8 +1,10 @@
 package lab4;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeMap;
 
@@ -18,12 +20,12 @@ public class Bank {
 		try{
 			reader = new BufferedReader(r);
 			header = reader.readLine();
-			line = reader.readLine()
+			line = reader.readLine();
 			while(line != null){
 				String[] accountData = line.split(" ");
-        			int num = Interger.parseInt(accountData[0]);
-        			int pin = Interger.parseInt(accountData[1]);
-        			double balance = Interger.parseInt(accountData[2]);
+        			int num = Integer.parseInt(accountData[0]);
+        			int pin = Integer.parseInt(accountData[1]);
+        			double balance = Integer.parseInt(accountData[2]);
 				Account curr = new Account(num, pin, balance);
 				map.put(num, curr);
         
@@ -31,14 +33,14 @@ public class Bank {
 			}
 		}
 		catch(Exception e){
-			
+			e.printStackTrace();
 		}
 	}
 	
 	public Account validate(Account temp){
 		int queryNum = temp.getAccountNumber();
 		Account result;
-		if (map.contains(queryNum)
+		if (map.containsKey(queryNum)
 		    result = map.get(queryNum);
 		else
 		    return null;
@@ -68,20 +70,19 @@ public class Bank {
 			fw = new FileWriter(path);
 			bw = new BufferedWriter(fw);
 			
-			bw.erite(header);
-			int[] keys = map.keys();
+			bw.write(header);
+			Set<Integer> keysSet = map.keySet();
+			Object[] keys = keysSet.toArray();
 			Account curr;
 			for( int i = 0; i < keys.length; i++){
 				curr = map.get(keys[i]);
-				bw.write(
+				bw.write(curr.toString());
 			}
 
-			System.out.println("Done");
-
-		} catch (IOException e) {
-
+			fw.close();
+		} 
+		catch (IOException e) {
 			e.printStackTrace();
-
 		}
 	}
 		    
