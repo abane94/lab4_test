@@ -1,3 +1,4 @@
+package lab4;
 
 public class Account {
 	
@@ -5,13 +6,13 @@ public class Account {
 	private int pin;
 	private double balance;
 	
-	public Account(int a; int p;){
+	public Account(int a, int p){
 		accountNumber = a;
 		pin = p;
 		balance = 0;
 	}
 	
-	public Account(int a; int p; int b){
+	public Account(int a, int p, double b){
 		accountNumber = a;
 		pin = p;
 		balance = b;
