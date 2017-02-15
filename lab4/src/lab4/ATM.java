@@ -20,6 +20,8 @@ public class ATM {
 	public void start() {
 		Scanner input = new Scanner(System.in);
 		String value;
+		System.out.println("Welcome to A Generic Bank(TM)'s ATM");
+		System.out.println("-----------------------------------\n");
 		do {
 			System.out.println("Please type " + '"' + "EXIT" + '"' + "to close.\n");
 			System.out.print("Please type " + '"' + "START" + '"' + "to begin: ");
@@ -44,12 +46,13 @@ public class ATM {
 						value = input.nextLine();
 						tmpAccount.withdrawl(Double.parseDouble(value));
 						bank.update(tmpAccount);
-					}
-					if (entry.equalsIgnoreCase("D")) {
+					} else if (entry.equalsIgnoreCase("D")) {
 						System.out.print("Please enter value of Deposit: $");
 						value = input.nextLine();
 						tmpAccount.deposit(Double.parseDouble(value));
 						bank.update(tmpAccount);
+					} else {
+						System.out.println("That is not a valid transaction entry.");
 					}
 
 					System.out.println("Your new account balance is: $" + tmpAccount.getBalance());
@@ -62,6 +65,8 @@ public class ATM {
 				}
 			}
 		} while (!entry.equalsIgnoreCase("EXIT"));
+		System.out.println("ATM shutting down...");
+		System.out.println("ATM is off. (Rerun driver to start again.)");
 		input.close();
 	}
 }

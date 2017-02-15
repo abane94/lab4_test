@@ -31,12 +31,11 @@ public class Bank {
 		BufferedReader reader;
 		String line;
 		try {
-			System.out.println(new File(".").getAbsoluteFile());
 			reader = new BufferedReader(r);
 			header = reader.readLine();
 			line = reader.readLine();
 			while (line != null) {
-				String[] accountData = line.split(" ");
+				String[] accountData = line.split(",");
 				int num = Integer.parseInt(accountData[0]);
 				int pin = Integer.parseInt(accountData[1]);
 				double balance = Integer.parseInt(accountData[2]);

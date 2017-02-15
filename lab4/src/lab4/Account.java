@@ -28,7 +28,7 @@ public class Account {
 			balance = balance - amount;
 			return true;
 		}
-		System.out.println("This transcraction could not be completed");
+		System.out.println("This transcraction could not be compeleted.\n Not enough money in account.");
 		return false;
 	}
 	
