@@ -12,6 +12,11 @@ public class Bank {
 	TreeMap<Integer, Account> map = new TreeMap<Integer, Account>();
 	String path;
 	String header;
+
+	/*
+	* this constructor reads in the data file containing the individual accounts and 
+	* stores them in a map with the key being the account number and the value being the account object
+	*/
 	public Bank(String dataPath){
 		File data = new File(dataPath);
 		FileReader r = new FileReader(data);
@@ -37,6 +42,9 @@ public class Bank {
 		}
 	}
 	
+	/* validaes the account, given an account object this will return the full object (with balance) 
+	* if the credentials match. if not retrun null
+	*/
 	public Account validate(Account temp){
 		int queryNum = temp.getAccountNumber();
 		Account result;
@@ -53,7 +61,7 @@ public class Bank {
 		    return null;
 	}
 		    
-	
+	// puts an already existing account in the map with an updated balance
 	public boolean update(Account temp){
 		if (map.contains(temp.getAccountNumber())){
 			map.push(temp.getAccountNumber(), temp);
@@ -61,7 +69,8 @@ public class Bank {
 		}
 		return false;
 	}
-		    
+	
+	// saves the accounts back to the file
 	public void close(){
 		BufferedWriter bw = null;
 		FileWriter fw = null;
